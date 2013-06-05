@@ -8,7 +8,7 @@ A <code>CountDownLatch</code> is used to force the verticle code to wait before 
 it is initialized with '1' before the <code>deployModule(...)</code> call, and it is counted down inside the *asynchronous* callback method.
 
 However, the timeout of the latch occurs (regardsless of the chosen timeout period) before the callback is called, **and** the callback is
-eventually called by the same thread as the one running the verticle's <code>start()</code> method (which starts the pleoyment to start with).  
+eventually called by the same thread as the one running the verticle's <code>start()</code> method (which starts the deployment to begin with).  
 Is the asynchronous behaviour exhausting the event loop thread pool?
 
 Steps to reproduce:
